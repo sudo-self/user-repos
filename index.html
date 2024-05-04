@@ -29,25 +29,24 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
     <style>
-        /* Dark mode styles */
-        .dark-mode {
-          background-color: #1a202c;
-          color: #fff;
-        }
+   .dark-mode {
+  background-color: #1a202c;
+  color: #fff;
+}
 
-        .dark-mode .text-gray-800 {
-          color: #000;
-        }
+.dark-mode .text-gray-800 {
+  color: #000;
+}
 
-        .dark-mode .bg-gray-100 {
-          background-color: #2d3748;
-        }
-        
-       .profile {
+.dark-mode .bg-gray-100 {
+  background-color: #2d3748;
+}
+
+.profile {
   display: none;
   max-width: 300px; 
   margin: 30px auto;
-  padding: 25px; /
+  padding: 25px; 
   background-color: #f0f0f0; 
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -56,121 +55,113 @@
   text-align: center; 
 }
 
+.dark-mode .profile {
+  color: #000 !important; 
+}
 
-      
-        .dark-mode .profile {
-          color: #000 !important; 
-        }
+input[type="text"] {
+  color: #000 !important;
+  max-width: calc(50 * 0.6ch);
+}
 
-        /* Set input text to black and adjust width */
-        input[type="text"] {
-          color: #000 !important;
-          max-width: calc(50 * 0.6ch); /* Adjusted to fit 50 characters */
-        }
+#repos ul,
+#followersList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 300px;
+  list-style-type: none;
+  padding: 0;
+  margin: 20px auto;
+  overflow-y: auto;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  padding: 10px;
+}
 
+#repos ul li,
+#followersList li {
+  cursor: pointer;
+  padding: 10px 0;
+  color: #000;
+}
 
-        /* Repositories and Followers Section Styles */
-        #repos ul,
-        #followersList {
-          display: flex; /* Center content horizontally */
-          flex-direction: column; /* Arrange content in a column */
-          align-items: center; /* Center content vertically */
-          max-width: 300px; /* Adjusted maximum width */
-          list-style-type: none;
-          padding: 0;
-          margin: 20px auto; /* Center content horizontally */
-          overflow-y: auto; /* Hide vertical scrollbar and enable scrolling */
-          background-color: #f0f0f0; /* Light-colored background */
-          border-radius: 5px; /* Rounded corners */
-          padding: 10px; /* Add padding for better spacing */
-        }
+.dark-mode #repos ul li,
+.dark-mode #followersList li {
+  color: #000;
+}
 
-        #repos ul li,
-        #followersList li {
-          cursor: pointer;
-          padding: 10px 0; /* Increase padding for better spacing */
-          color: #000; /* Default text color */
-        }
+#repos ul li a,
+#followersList li a {
+  color: #000;
+}
 
-        .dark-mode #repos ul li,
-        .dark-mode #followersList li {
-          color: #000; /* Dark mode text color */
-        }
+.dark-mode #repos ul li a,
+.dark-mode #followersList li a {
+  color: #000;
+}
 
-        #repos ul li a,
-        #followersList li a {
-          color: #000;
-        }
+form,
+input[type="text"],
+button {
+  text-align: center;
+  color: #000;
+}
 
-        .dark-mode #repos ul li a,
-        .dark-mode #followersList li a {
-          color: #000;
-        }
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 10px 0;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-        form,
-        input[type="text"],
-        button {
-          text-align: center;
-          color: #000;
-        }
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  box-sizing: border-box;
+}
 
-      
-        footer {
-          position: fixed;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          text-align: center;
-          padding: 10px 0;
-          cursor: pointer;
-          margin-left: auto;
-          margin-right: auto;
-        }
+button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #007bff;
+  border: none;
+  cursor: pointer;
+}
 
+button:hover {
+  background-color: #0056b3;
+}
 
-        input[type="text"] {
-          width: 100%;
-          padding: 10px;
-          margin-top: 10px;
-          box-sizing: border-box;
-        }
+.profile img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
 
-        button {
-          padding: 10px 20px;
-          margin-top: 10px;
-          background-color: #007bff;
-          border: none;
-          cursor: pointer;
-        }
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
 
-        button:hover {
-          background-color: #0056b3;
-        }
+footer a {
+  color: #10b981;
+  font-weight: bold;
+}
 
-        .profile img {
-          width: 100px;
-          height: 100px;
-          border-radius: 50%;
-        }
-
-        #particles-js {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          z-index: -1;
-        }
-
-        footer a {
-          color: #10b981;
-          font-weight: bold;
-        }
-
-        footer a:hover {
-          color: #059669;
-        }
-
+footer a:hover {
+  color: #059669;
+}
 
     </style>
 
