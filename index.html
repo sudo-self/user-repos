@@ -35,91 +35,86 @@
           color: #fff;
         }
 
-        .dark-mode .text-green-900 {
-          color: #fff;
+        .dark-mode .text-gray-800 {
+          color: #000;
         }
 
         .dark-mode .bg-gray-100 {
           background-color: #2d3748;
         }
-
+        
         /* Profile Info Styles */
         .profile {
-          max-width: 500px;
+          display: none; /* Hide profile section by default */
+          max-width: 300px; /* Adjusted maximum width */
           margin: 20px auto;
           padding: 20px;
-          background-color: rgba(0, 0, 0, 0); /* Transparent background */
+          background-color: #f0f0f0; /* Light-colored background */
           border-radius: 5px;
           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-          color: #000; /* Default text color */
+          color: #000 !important; /* Profile text color */
           overflow: hidden; /* Hide scrollbar */
           text-align: center; /* Center content */
         }
 
         /* Dark mode */
         .dark-mode .profile {
-          color: #000; /* Dark text color */
+          color: #000 !important; /* Dark mode profile text color */
         }
 
-        .profile img {
-          width: 100px;
-          height: 100px;
-          border-radius: 50%;
-        }
-
-        /* Input Styles */
+        /* Set input text to black and adjust width */
         input[type="text"] {
-          width: auto; /* Set input width to default */
-          max-width: calc(30 * 0.6ch); /* Set max-width to fit 30 characters */
-          padding: 10px;
-          box-sizing: border-box;
-          color: #000 !important; /* Set text color to black */
+          color: #000 !important;
+          max-width: calc(50 * 0.6ch); /* Adjusted to fit 50 characters */
         }
-
-        /* Button Styles */
-        button {
-          display: inline-block; /* Display button inline */
-          vertical-align: middle; /* Align button vertically */
-          padding: 10px 20px;
-          background-color: #007bff;
-          border: none;
-          color: #fff; /* Set text color to white */
-          cursor: pointer;
-        }
-
-        button:hover {
-          background-color: #0056b3;
-        }
-
-
 
 
         /* Repositories and Followers Section Styles */
         #repos ul,
         #followersList {
+          display: flex; /* Center content horizontally */
+          flex-direction: column; /* Arrange content in a column */
+          align-items: center; /* Center content vertically */
+          max-width: 300px; /* Adjusted maximum width */
           list-style-type: none;
           padding: 0;
-          margin: 0;
+          margin: 20px auto; /* Center content horizontally */
           overflow-y: auto; /* Hide vertical scrollbar and enable scrolling */
+          background-color: #f0f0f0; /* Light-colored background */
+          border-radius: 5px; /* Rounded corners */
+          padding: 10px; /* Add padding for better spacing */
         }
 
         #repos ul li,
         #followersList li {
           cursor: pointer;
-          padding: 5px 0; /* Increase padding to make each list item taller */
+          padding: 10px 0; /* Increase padding for better spacing */
+          color: #000; /* Default text color */
+        }
+
+        .dark-mode #repos ul li,
+        .dark-mode #followersList li {
+          color: #000; /* Dark mode text color */
         }
 
         #repos ul li a,
         #followersList li a {
-          color: #000; /* Default text color */
+          color: #000;
         }
 
         .dark-mode #repos ul li a,
         .dark-mode #followersList li a {
-          color: #fff; /* Dark mode text color */
+          color: #000;
         }
 
-        /* Footer Styles */
+        form,
+        input[type="text"],
+        button {
+          text-align: center;
+          color: #000;
+        }
+
+      
         footer {
           position: fixed;
           bottom: 0;
@@ -132,17 +127,6 @@
           margin-right: auto;
         }
 
-        /* Other Styles */
-        h1,
-        form,
-        input[type="text"],
-        button,
-        .profile h2,
-        .profile p,
-        .repos a {
-          text-align: center;
-          color: #fff;
-        }
 
         input[type="text"] {
           width: 100%;
@@ -229,7 +213,7 @@
       />
       <button
         type="submit"
-        class="ml-2 px-4 py-2 text-white rounded-lg bg-gray-800 focus:outline-none hover:bg-green-900"
+        class="ml-2 px-4 py-2 text-white rounded-lg bg-gray-800 focus:outline-none hover:bg-green-800"
         style="border: 1px solid gray;"
       >
         Search
@@ -241,7 +225,7 @@
       <div class="mb-8">
         <button
           id="darkModeToggle"
-          class="px-4 py-2 text-white rounded-lg bg-gray-800 focus:outline-none hover:bg-red-800"
+          class="px-4 py-2 text-white rounded-lg bg-gray-400 focus:outline-none hover:bg-green-800"
           style="border: 1px solid gray;"
         >
           <img src="https://bucket.jessejesse.com/node.svg" width="50" class="mx-auto">
@@ -251,8 +235,8 @@
       <!-- Profile Section -->
       <div
           id="profile"
-          class="profile flex flex-col items-center justify-center mb-8"
-          style="overflow-y: auto; max-height: 300px; margin-left: auto; margin-right: auto; color: #fff;"
+          class="profile flex flex-col items-center text-black justify-center mb-8"
+          style="overflow-y: auto; max-height: 300px; margin-left: auto; margin-right: auto; color: #000;"
       >
           <img
               id="avatar"
@@ -260,7 +244,7 @@
               alt=""
               class="w-32 h-32 rounded-full mb-4"
           />
-          <h2 id="name" class="text-xl text-white font-bold mb-2"></h2>
+          <h2 id="name" class="text-xl font-bold mb-2"></h2>
           <p id="bio" class="text-center mb-2"></p>
           <p id="followers" class="mb-2"></p>
           <p id="following" class="mb-2"></p>
@@ -501,6 +485,12 @@
     </script>
   </body>
 </html>
+
+
+
+
+
+
 
 
 
