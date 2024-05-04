@@ -29,122 +29,211 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
     <style>
-      .dark-mode {
-        background-color: #1a202c;
-        color: #fff;
-      }
-      .dark-mode .text-green-900 {
-        color: #fff;
-      }
-      .dark-mode .bg-gray-100 {
-        background-color: #2d3748;
-      }
-     body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-  
-    padding: 0;
-    color: #000;
-    position: relative;
-}
+        /* Dark mode styles */
+        .dark-mode {
+          background-color: #1a202c;
+          color: #fff;
+        }
 
+        .dark-mode .text-green-900 {
+          color: #fff;
+        }
 
+        .dark-mode .bg-gray-100 {
+          background-color: #2d3748;
+        }
 
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  text-align: center;
-  padding: 10px 0;
-  cursor: pointer;
-  margin-left: auto;
-  margin-right: auto;
-}
+        /* Profile Info Styles */
+        .profile {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          }
+          .profile img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+          }
 
+        /* Repositories and Followers Section Styles */
+        #repos ul,
+        #followersList {
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+        }
 
+        #repos ul li,
+        #followersList li {
+          cursor: pointer;
+        }
 
+        #repos ul li a,
+        #followersList li a {
+          color: #000; /* Default text color */
+        }
 
-      h1 {
-        text-align: center;
-        color: #fff;
-      }
-      form {
-        max-width: 500px;
-        margin: 0 auto;
-        text-align: center;
-      }
-      input[type="text"],
-      button,
-      .profile h2,
-      .profile p,
-      .repos a {
-        color: #000;
-      }
-      input[type="text"] {
-        width: 100%;
-        padding: 10px;
-        margin-top: 10px;
-        box-sizing: border-box;
-      }
-      button {
-        padding: 10px 20px;
-        margin-top: 10px;
-        background-color: #007bff;
-        border: none;
-        cursor: pointer;
-      }
-      button:hover {
-        background-color: #0056b3;
-      }
-      .profile {
-        max-width: 500px;
-        margin: 20px auto;
-        padding: 20px;
-        background-color: #f0f0f0;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      }
-      .profile img {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-      }
-      .repos {
-        max-width: 500px;
-        margin: 20px auto;
-        padding: 20px;
-        background-color: #f0f0f0;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        overflow-y: auto;
-        max-height: 300px;
-      }
-      .repos ul {
-        list-style: none;
-        padding: 0;
-      }
-      .repos li {
-        margin-bottom: 10px;
-      }
+        .dark-mode #repos ul li a,
+        .dark-mode #followersList li a {
+          color: #fff; /* Dark mode text color */
+        }
 
-      #particles-js {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-      }
-      
-      footer a {
-        color: #10b981;
-        font-weight: bold;
-      }
+        /* Footer Styles */
+        footer {
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          text-align: center;
+          padding: 10px 0;
+          cursor: pointer;
+          margin-left: auto;
+          margin-right: auto;
+        }
 
-      footer a:hover {
-        color: #059669;
-      }
+        /* Other Styles */
+        h1 {
+          text-align: center;
+          color: #fff;
+        }
+
+        form {
+          max-width: 500px;
+          margin: 0 auto;
+          text-align: center;
+        }
+
+        input[type="text"],
+        button,
+        .profile h2,
+        .profile p,
+        .repos a {
+          color: #000;
+        }
+
+        input[type="text"] {
+          width: 100%;
+          padding: 10px;
+          margin-top: 10px;
+          box-sizing: border-box;
+        }
+
+        button {
+          padding: 10px 20px;
+          margin-top: 10px;
+          background-color: #007bff;
+          border: none;
+          cursor: pointer;
+        }
+
+        button:hover {
+          background-color: #0056b3;
+        }
+
+        .profile img {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+        }
+
+        #particles-js {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+        }
+
+        footer a {
+          color: #10b981;
+          font-weight: bold;
+        }
+
+        footer a:hover {
+          color: #059669;
+        }
+
+        /* Footer Styles */
+        footer {
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          text-align: center;
+          padding: 10px 0;
+          cursor: pointer;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        /* Other Styles */
+        h1 {
+          text-align: center;
+          color: #fff;
+        }
+
+        form {
+          max-width: 500px;
+          margin: 0 auto;
+          text-align: center;
+        }
+
+        input[type="text"],
+        button,
+        .profile h2,
+        .profile p,
+        .repos a {
+          color: #000;
+        }
+
+        input[type="text"] {
+          width: 100%;
+          padding: 10px;
+          margin-top: 10px;
+          box-sizing: border-box;
+        }
+
+        button {
+          padding: 10px 20px;
+          margin-top: 10px;
+          background-color: #007bff;
+          border: none;
+          cursor: pointer;
+        }
+
+        button:hover {
+          background-color: #0056b3;
+        }
+
+        .profile img {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          align: center;
+        }
+
+        #particles-js {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: -1;
+        }
+
+        footer a {
+          color: #10b981;
+          font-weight: bold;
+        }
+
+        footer a:hover {
+          color: #059669;
+        }
+
     </style>
 
     <script async defer src="https://buttons.github.io/buttons.js"></script>
@@ -192,38 +281,53 @@ footer {
         Search
       </button>
     </form>
-    <div class="flex justify-center">
-   <button
-  id="darkModeToggle"
-  class="ml-2 px-4 py-2 text-white rounded-lg hover:bg-violet-800 focus:outline-none focus:bg-green-600"
-  style="background: transparent; border: 1px solid gray;"
->
-  <img src="https://bucket.jessejesse.com/node.svg" width="50" class="mx-auto">
-</button>
+    
+    <div class="container mx-auto py-10 text-center">
+      <!-- Button Container -->
+      <div class="mb-8">
+        <button
+          id="darkModeToggle"
+          class="px-4 py-2 text-white rounded-lg hover:bg-violet-800 focus:outline-none focus:bg-green-600"
+          style="background: transparent; border: 1px solid gray;"
+        >
+          <img src="https://bucket.jessejesse.com/node.svg" width="50" class="mx-auto">
+        </button>
+      </div>
+
+      <!-- Profile Section -->
+      <div
+        id="profile"
+        class="profile flex flex-col items-center justify-center mb-8"
+        style="display: none; overflow-y: auto; max-height: 300px; margin-left: auto; margin-right: auto;"
+      >
+        <img
+          id="avatar"
+          src=""
+          alt="Profile Picture"
+          class="w-32 h-32 rounded-full mb-4"
+        />
+        <h2 id="name" class="text-xl font-bold mb-2"></h2>
+        <p id="bio" class="text-center mb-2"></p>
+        <p id="followers" class="mb-2"></p>
+        <p id="following" class="mb-2"></p>
+        <p id="publicRepos" class="mb-2"></p>
+      </div>
+
+      <!-- Repositories Section -->
+      <div id="repos" class="repos mb-8" style="display: none; overflow-y: auto; max-height: 300px; margin-left: auto; margin-right: auto;">
+        <h3 class="text-lg font-semibold">Repositories</h3>
+        <ul id="repoList" class="list-disc list-inside"></ul>
+      </div>
+
+      <!-- Followers Section -->
+      <div id="followersContainer" class="mb-2" style="display: none; overflow-y: auto; max-height: 300px; margin-left: auto; margin-right: auto;">
+        <h3 class="text-lg font-semibold">Followers</h3>
+        <ul id="followersList" class="list-disc list-inside"></ul>
+      </div>
+    </div>
 
 
-    </div>
-    <div
-      id="profile"
-      class="profile flex flex-col items-center justify-center mb-8"
-      style="display: none"
-    >
-      <img
-        id="avatar"
-        src=""
-        alt="Profile Picture"
-        class="w-32 h-32 rounded-full mb-4"
-      />
-      <h2 id="name" class="text-xl font-bold mb-2"></h2>
-      <p id="bio" class="text-center mb-2"></p>
-      <p id="followers" class="mb-2"></p>
-      <p id="following" class="mb-2"></p>
-      <p id="publicRepos" class="mb-2"></p>
-    </div>
 
-    <div id="repos" class="repos mb-8" style="display: none">
-      <ul id="repoList" class="list-disc list-inside"></ul>
-    </div>
 
     <div id="particles-js"></div>
 
@@ -235,62 +339,80 @@ footer {
     </footer>
 
     <script>
-      document
-        .getElementById("githubForm")
-        .addEventListener("submit", async function (event) {
-          event.preventDefault();
-          const username = document.getElementById("usernameInput").value;
-          try {
-            const response = await fetch(
-              `https://api.github.com/users/${username}`,
-            );
-            const data = await response.json();
-            displayProfile(data);
-            await fetchRepos(username);
-          } catch (error) {
-            console.error("Error fetching GitHub profile data:", error);
-          }
-        });
+     document.getElementById("githubForm").addEventListener("submit", async function (event) {
+       event.preventDefault();
+       const username = document.getElementById("usernameInput").value;
+       try {
+         const response = await fetch(`https://api.github.com/users/${username}`);
+         const data = await response.json();
+         displayProfile(data);
+         await fetchRepos(username);
+         await fetchFollowers(username); // Add this line to fetch followers
+         document.getElementById("followersContainer").style.display = "block"; // Show the container after fetching followers
+       } catch (error) {
+         console.error("Error fetching GitHub profile data:", error);
+       }
+     });
+
 
       function displayProfile(data) {
         document.getElementById("profile").style.display = "block";
         document.getElementById("avatar").src = data.avatar_url;
         document.getElementById("name").textContent = data.name || data.login;
-        document.getElementById("bio").textContent =
-          data.bio || "No bio available.";
-        document.getElementById("followers").textContent =
-          `Followers: ${data.followers}`;
-        document.getElementById("following").textContent =
-          `Following: ${data.following}`;
-        document.getElementById("publicRepos").textContent =
-          `Public Repositories: ${data.public_repos}`;
+        document.getElementById("bio").textContent = data.bio || "No bio available.";
+        document.getElementById("followers").textContent = `Followers: ${data.followers}`;
+        document.getElementById("following").textContent = `Following: ${data.following}`;
+        document.getElementById("publicRepos").textContent = `Public Repositories: ${data.public_repos}`;
       }
 
-      async function fetchRepos(username) {
-        try {
-          const response = await fetch(
-            `https://api.github.com/users/${username}/repos`,
-          );
-          const data = await response.json();
-          displayRepos(data);
-        } catch (error) {
-          console.error("Error fetching GitHub repositories:", error);
-        }
-      }
+     async function fetchRepos(username) {
+       try {
+         const response = await fetch(`https://api.github.com/users/${username}/repos`);
+         const data = await response.json();
+         displayRepos(data);
+       } catch (error) {
+         console.error("Error fetching GitHub repositories:", error);
+       }
+     }
 
-      function displayRepos(repos) {
-        document.getElementById("repos").style.display = "block";
-        const repoList = document.getElementById("repoList");
-        repoList.innerHTML = "";
-        repos.forEach((repo) => {
-          const li = document.createElement("li");
-          const a = document.createElement("a");
-          a.href = repo.html_url;
-          a.textContent = repo.name;
-          li.appendChild(a);
-          repoList.appendChild(li);
-        });
+     function displayRepos(repos) {
+       document.getElementById("repos").style.display = "block";
+       const repoList = document.getElementById("repoList");
+       repoList.innerHTML = "";
+       repos.forEach((repo) => {
+         const li = document.createElement("li");
+         const a = document.createElement("a");
+         a.href = repo.html_url;
+         a.textContent = repo.name;
+         li.appendChild(a);
+         repoList.appendChild(li);
+       });
+     }
+
+    async function fetchFollowers(username) {
+      try {
+        const response = await fetch(`https://api.github.com/users/${username}/followers`);
+        const data = await response.json();
+        displayFollowers(data);
+      } catch (error) {
+        console.error("Error fetching GitHub followers:", error);
       }
+    }
+
+    function displayFollowers(followers) {
+      const followersList = document.getElementById("followersList");
+      followersList.innerHTML = "";
+      followers.forEach((follower) => {
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+        a.href = follower.html_url;
+        a.textContent = follower.login;
+        li.appendChild(a);
+        followersList.appendChild(li);
+      });
+    }
+
+
 
       // Dark mode toggle
       const darkModeToggle = document.getElementById("darkModeToggle");
