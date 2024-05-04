@@ -45,18 +45,54 @@
 
         /* Profile Info Styles */
         .profile {
-            max-width: 500px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #f0f0f0;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-          }
-          .profile img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-          }
+          max-width: 500px;
+          margin: 20px auto;
+          padding: 20px;
+          background-color: rgba(0, 0, 0, 0); /* Transparent background */
+          border-radius: 5px;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          color: #000; /* Default text color */
+          overflow: hidden; /* Hide scrollbar */
+          text-align: center; /* Center content */
+        }
+
+        /* Dark mode */
+        .dark-mode .profile {
+          color: #000; /* Dark text color */
+        }
+
+        .profile img {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+        }
+
+        /* Input Styles */
+        input[type="text"] {
+          width: auto; /* Set input width to default */
+          max-width: calc(30 * 0.6ch); /* Set max-width to fit 30 characters */
+          padding: 10px;
+          box-sizing: border-box;
+          color: #000 !important; /* Set text color to black */
+        }
+
+        /* Button Styles */
+        button {
+          display: inline-block; /* Display button inline */
+          vertical-align: middle; /* Align button vertically */
+          padding: 10px 20px;
+          background-color: #007bff;
+          border: none;
+          color: #fff; /* Set text color to white */
+          cursor: pointer;
+        }
+
+        button:hover {
+          background-color: #0056b3;
+        }
+
+
+
 
         /* Repositories and Followers Section Styles */
         #repos ul,
@@ -64,11 +100,13 @@
           list-style-type: none;
           padding: 0;
           margin: 0;
+          overflow-y: auto; /* Hide vertical scrollbar and enable scrolling */
         }
 
         #repos ul li,
         #followersList li {
           cursor: pointer;
+          padding: 5px 0; /* Increase padding to make each list item taller */
         }
 
         #repos ul li a,
@@ -95,23 +133,15 @@
         }
 
         /* Other Styles */
-        h1 {
-          text-align: center;
-          color: #fff;
-        }
-
-        form {
-          max-width: 500px;
-          margin: 0 auto;
-          text-align: center;
-        }
-
+        h1,
+        form,
         input[type="text"],
         button,
         .profile h2,
         .profile p,
         .repos a {
-          color: #000;
+          text-align: center;
+          color: #fff;
         }
 
         input[type="text"] {
@@ -157,82 +187,6 @@
           color: #059669;
         }
 
-        /* Footer Styles */
-        footer {
-          position: fixed;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          text-align: center;
-          padding: 10px 0;
-          cursor: pointer;
-          margin-left: auto;
-          margin-right: auto;
-        }
-
-        /* Other Styles */
-        h1 {
-          text-align: center;
-          color: #fff;
-        }
-
-        form {
-          max-width: 500px;
-          margin: 0 auto;
-          text-align: center;
-        }
-
-        input[type="text"],
-        button,
-        .profile h2,
-        .profile p,
-        .repos a {
-          color: #000;
-        }
-
-        input[type="text"] {
-          width: 100%;
-          padding: 10px;
-          margin-top: 10px;
-          box-sizing: border-box;
-        }
-
-        button {
-          padding: 10px 20px;
-          margin-top: 10px;
-          background-color: #007bff;
-          border: none;
-          cursor: pointer;
-        }
-
-        button:hover {
-          background-color: #0056b3;
-        }
-
-        .profile img {
-          width: 100px;
-          height: 100px;
-          border-radius: 50%;
-          align: center;
-        }
-
-        #particles-js {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          z-index: -1;
-        }
-
-        footer a {
-          color: #10b981;
-          font-weight: bold;
-        }
-
-        footer a:hover {
-          color: #059669;
-        }
 
     </style>
 
@@ -275,8 +229,8 @@
       />
       <button
         type="submit"
-        class="ml-2 px-4 py-2 text-white rounded-lg hover:bg-violet-800 focus:outline-none focus:bg-green-600"
-        style="background: transparent; border: 1px solid gray;"
+        class="ml-2 px-4 py-2 text-white rounded-lg bg-gray-800 focus:outline-none hover:bg-green-900"
+        style="border: 1px solid gray;"
       >
         Search
       </button>
@@ -287,8 +241,8 @@
       <div class="mb-8">
         <button
           id="darkModeToggle"
-          class="px-4 py-2 text-white rounded-lg hover:bg-violet-800 focus:outline-none focus:bg-green-600"
-          style="background: transparent; border: 1px solid gray;"
+          class="px-4 py-2 text-white rounded-lg bg-gray-800 focus:outline-none hover:bg-red-800"
+          style="border: 1px solid gray;"
         >
           <img src="https://bucket.jessejesse.com/node.svg" width="50" class="mx-auto">
         </button>
@@ -296,21 +250,21 @@
 
       <!-- Profile Section -->
       <div
-        id="profile"
-        class="profile flex flex-col items-center justify-center mb-8"
-        style="display: none; overflow-y: auto; max-height: 300px; margin-left: auto; margin-right: auto;"
+          id="profile"
+          class="profile flex flex-col items-center justify-center mb-8"
+          style="overflow-y: auto; max-height: 300px; margin-left: auto; margin-right: auto; color: #fff;"
       >
-        <img
-          id="avatar"
-          src=""
-          alt="Profile Picture"
-          class="w-32 h-32 rounded-full mb-4"
-        />
-        <h2 id="name" class="text-xl font-bold mb-2"></h2>
-        <p id="bio" class="text-center mb-2"></p>
-        <p id="followers" class="mb-2"></p>
-        <p id="following" class="mb-2"></p>
-        <p id="publicRepos" class="mb-2"></p>
+          <img
+              id="avatar"
+              src=""
+              alt=""
+              class="w-32 h-32 rounded-full mb-4"
+          />
+          <h2 id="name" class="text-xl text-white font-bold mb-2"></h2>
+          <p id="bio" class="text-center mb-2"></p>
+          <p id="followers" class="mb-2"></p>
+          <p id="following" class="mb-2"></p>
+          <p id="publicRepos" class="mb-2"></p>
       </div>
 
       <!-- Repositories Section -->
@@ -547,4 +501,14 @@
     </script>
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
 
